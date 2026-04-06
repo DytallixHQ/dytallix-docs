@@ -16,24 +16,26 @@ The content in `docs/` was reconciled against:
 
 ## Repository Layout
 
-- `docs/index.md` — landing page and doc map
-- `docs/implementation-status.md` — verified public behavior and known mismatches
-- `docs/getting-started.md` — SDK and CLI quickstart
-- `docs/core-concepts.md` — accounts, tokens, gas, transaction model
-- `docs/cli-reference.md` — CLI command reference
-- `docs/sdk-reference.md` — SDK crate and API reference
-- `docs/rpc-reference.md` — public RPC, explorer API, and faucet API reference
-- `docs/node-operators.md` — local node and operator notes
-- `docs/tokenomics.md` — token roles and current public testnet behavior
-- `docs/security-model.md` — cryptographic and protocol security model
-- `docs/whitepapers.md` — whitepaper index with bundled PDFs
-- `docs/faq.md` — common questions and answers
-- `docs/assets/whitepapers/` — bundled PDF whitepapers
+- [Home / Doc Map](docs/index.md) — landing page and navigation entrypoint
+- [Implementation Status](docs/implementation-status.md) — verified public behavior and known mismatches
+- [Getting Started](docs/getting-started.md) — SDK and CLI quickstart
+- [Core Concepts](docs/core-concepts.md) — accounts, tokens, gas, and transaction model
+- [CLI Reference](docs/cli-reference.md) — command reference for `dytallix`
+- [SDK Reference](docs/sdk-reference.md) — Rust SDK crate and API reference
+- [RPC Reference](docs/rpc-reference.md) — public RPC, explorer API, and faucet API reference
+- [Node Operators](docs/node-operators.md) — local node and operator notes
+- [Tokenomics](docs/tokenomics.md) — token roles and current public testnet behavior
+- [Security Model](docs/security-model.md) — cryptographic and protocol security model
+- [Whitepapers Index](docs/whitepapers.md) — whitepaper index and bundled documents
+- [FAQ](docs/faq.md) — common questions and answers
+- [Foundational White Paper (PDF)](docs/assets/whitepapers/dytallix-foundational-white-paper.pdf)
+- [Technical White Paper (PDF)](docs/assets/whitepapers/dytallix-technical-white-paper.pdf)
+- [Tokenomics Paper (PDF)](docs/assets/whitepapers/dytallix-tokenomics-paper.pdf)
 
 ## Local Preview
 
 If you want to preview the docs as a site, this repository includes
-`mkdocs.yml`.
+[mkdocs.yml](mkdocs.yml).
 
 ```bash
 pip install mkdocs
