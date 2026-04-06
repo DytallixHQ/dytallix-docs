@@ -1,23 +1,50 @@
 # Dytallix Documentation
 
-Official documentation for Dytallix — a PQC-native Layer 1 blockchain.
+Official documentation for Dytallix, a PQC-native Layer 1 blockchain.
 
-## Status
+This repository now contains the first complete public docs set for the Dytallix
+SDK, CLI, public RPC, explorer endpoints, node snapshot, token model, security
+assumptions, FAQ, and whitepaper distribution.
 
-Under construction. Documentation deployed at https://dytallix.com/docs
+The content in `docs/` was reconciled against:
 
-## Contents
+- the local `dytallix-sdk-publish` snapshot
+- the local `dytallix-node-publish` snapshot
+- the local explorer and faucet READMEs
+- the three Dytallix whitepapers
+- live public endpoint checks performed on April 6, 2026
 
-- Getting Started — install the SDK, generate a keypair, send your first transaction
-- CLI Reference — complete reference for all dytallix CLI commands
-- SDK Reference — complete API reference for the dytallix-sdk crate
-- Core Concepts — ML-DSA-65, Bech32m addresses, dimensional gas, dual token model
-- FAQ — common questions and answers
+## Repository Layout
+
+- `docs/index.md` — landing page and doc map
+- `docs/implementation-status.md` — verified public behavior and known mismatches
+- `docs/getting-started.md` — SDK and CLI quickstart
+- `docs/core-concepts.md` — accounts, tokens, gas, transaction model
+- `docs/cli-reference.md` — CLI command reference
+- `docs/sdk-reference.md` — SDK crate and API reference
+- `docs/rpc-reference.md` — public RPC, explorer API, and faucet API reference
+- `docs/node-operators.md` — local node and operator notes
+- `docs/tokenomics.md` — token roles and current public testnet behavior
+- `docs/security-model.md` — cryptographic and protocol security model
+- `docs/whitepapers.md` — whitepaper index with bundled PDFs
+- `docs/faq.md` — common questions and answers
+- `docs/assets/whitepapers/` — bundled PDF whitepapers
+
+## Local Preview
+
+If you want to preview the docs as a site, this repository includes
+`mkdocs.yml`.
+
+```bash
+pip install mkdocs
+mkdocs serve
+```
 
 ## Links
 
+- Website: https://dytallix.com
 - SDK: https://github.com/DytallixHQ/dytallix-sdk
 - Explorer: https://github.com/DytallixHQ/dytallix-explorer
-- Whitepapers: https://dytallix.com
-- Website: https://dytallix.com
-- Discord: https://discord.com/invite/eyVvu5kmPG
+- Faucet: https://github.com/DytallixHQ/dytallix-faucet
+- Docs site: https://dytallix.com/docs
+- Discord: https://discord.gg/eyVvu5kmPG
