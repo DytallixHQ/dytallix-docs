@@ -14,7 +14,7 @@ transaction.
 Install the SDK with network support:
 
 ```bash
-cargo add dytallix-sdk --features network
+cargo add dytallix-sdk --git https://github.com/DytallixHQ/dytallix-sdk.git --features network
 cargo add tokio --features macros,rt-multi-thread
 ```
 
@@ -57,6 +57,9 @@ async fn main() -> anyhow::Result<()> {
 ```
 
 This flow was verified against the public testnet on April 6, 2026.
+
+The SDK is not currently published on crates.io, so the Git install path above
+is the canonical install path.
 
 ## CLI Quickstart
 

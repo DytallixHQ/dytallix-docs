@@ -8,11 +8,12 @@ assumptions, FAQ, and whitepaper distribution.
 
 The content in `docs/` was reconciled against:
 
-- the local `dytallix-sdk-publish` snapshot
-- the local `dytallix-node-publish` snapshot
+- the public `dytallix-sdk` repository
+- the public `dytallix-node` repository
 - the local explorer and faucet READMEs
 - the three Dytallix whitepapers
 - live public endpoint checks performed on April 6, 2026
+- [`public-surface.json`](public-surface.json), which is checked in CI
 
 ## Repository Layout
 
@@ -41,6 +42,14 @@ If you want to preview the docs as a site, this repository includes
 pip install mkdocs
 mkdocs serve
 ```
+
+## Public Surface Guard
+
+The canonical public integration values live in
+[`public-surface.json`](public-surface.json). CI runs
+[`scripts/check_public_surface.py`](scripts/check_public_surface.py) to catch
+retired hosts, stale local ports, and install-command drift in the Markdown
+docs before those inconsistencies land on `main`.
 
 ## Links
 

@@ -1,7 +1,7 @@
 # Implementation Status
 
 This page records the public behavior that was verified on April 6, 2026 and
-the mismatches that still exist across the local source snapshots.
+the practical limitations that still matter for public integrations.
 
 ## Treat These As Canonical Today
 
@@ -77,19 +77,6 @@ Practical guidance:
 - keep `DRT` documented as the reward token and as part of the long-range
   dual-token design language
 
-### SDK Dev Tree vs Publish Tree
-
-The local `dytallix-sdk` working tree still points transaction simulation and
-submission at `/v1/transactions` and `/v1/transactions/simulate`.
-
-The local `dytallix-sdk-publish` tree is closer to the public gateway:
-
-- it submits transactions through `/api/blockchain/submit`
-- it derives fees from `/status`
-- it uses `http://localhost:3030` for the local node client
-
-This documentation uses the publish-tree behavior whenever the two diverge.
-
 ### Public `GET /v1/*` JSON Routes
 
 The public site gateway does not currently expose `GET /v1/*` JSON responses as
@@ -101,27 +88,15 @@ Practical guidance:
 - use root RPC paths and `/api/blockchain/*` read paths today
 - do not depend on public `GET /v1/*` routes unless the gateway is updated
 
-### Local Node Port
+### Advanced Reads Still Need A Direct Node Endpoint
 
-There is still a local-profile inconsistency:
+The public SDK and CLI now align on the live public hosts and the `3030` local
+port. The remaining mismatch is narrower:
 
-- published node source and published SDK client use `3030`
-- the current CLI config helper still uses `8545` for the `local` profile
-
-If you are operating the published local node snapshot, `3030` is the
-observable node port in source and docs.
-
-### Explorer URL
-
-The supported public explorer page is:
-
-- `https://dytallix.com/build/blockchain`
-
-The current CLI `dev explorer` command still points to:
-
-- `https://explorer.dytallix.com`
-
-Treat the site-hosted explorer path as canonical for now.
+- validator and delegation reads still require a direct node endpoint
+- contract query and events reads still require a direct node endpoint
+- the public website gateway remains centered on root RPC reads and selected
+  `/api/*` surfaces
 
 ### Block Interval Default
 
@@ -134,7 +109,8 @@ If you are starting from source, trust `main.rs`.
 
 For future doc maintenance, use this priority order:
 
-1. live public gateway behavior
-2. `dytallix-sdk-publish`
-3. `dytallix-node-publish`
-4. older working-tree or placeholder docs
+1. `public-surface.json` in this repository
+2. live public gateway behavior
+3. `dytallix-sdk`
+4. `dytallix-node`
+5. docs-only public service repositories such as explorer and faucet

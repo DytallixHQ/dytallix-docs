@@ -1,0 +1,47 @@
+{
+  "verified_on": "2026-04-06",
+  "sdk": {
+    "git_url": "https://github.com/DytallixHQ/dytallix-sdk.git",
+    "published_on_crates_io": false
+  },
+  "profiles": {
+    "testnet": {
+      "node": "https://dytallix.com",
+      "explorer": "https://dytallix.com/build/blockchain",
+      "faucet": "https://dytallix.com/api/faucet"
+    },
+    "local": {
+      "node": "http://localhost:3030",
+      "faucet": "http://localhost:3004"
+    }
+  },
+  "retired_hosts": [
+    "explorer.dytallix.com",
+    "faucet.dytallix.com",
+    "testnet.dytallix.com",
+    "mainnet.dytallix.com"
+  ],
+  "banned_strings": [
+    "http://localhost:8545"
+  ],
+  "required_strings": {
+    "README.md": [
+      "public-surface.json",
+      "scripts/check_public_surface.py"
+    ],
+    "docs/getting-started.md": [
+      "cargo add dytallix-sdk --git https://github.com/DytallixHQ/dytallix-sdk.git --features network",
+      "https://dytallix.com/api/faucet"
+    ],
+    "docs/sdk-reference.md": [
+      "cargo add dytallix-sdk --git https://github.com/DytallixHQ/dytallix-sdk.git",
+      "`get_validators()` and `get_delegations()` still require a direct node"
+    ],
+    "docs/cli-reference.md": [
+      "network <testnet|local>",
+      "https://dytallix.com/build/blockchain",
+      "https://dytallix.com/api/governance/proposals",
+      "http://localhost:3030"
+    ]
+  }
+}

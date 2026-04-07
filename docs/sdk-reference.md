@@ -13,13 +13,13 @@ This page focuses on the Rust SDK surface used by applications and automation.
 Minimal keypair and address flow:
 
 ```bash
-cargo add dytallix-sdk
+cargo add dytallix-sdk --git https://github.com/DytallixHQ/dytallix-sdk.git
 ```
 
 Network-enabled client and faucet flow:
 
 ```bash
-cargo add dytallix-sdk --features network
+cargo add dytallix-sdk --git https://github.com/DytallixHQ/dytallix-sdk.git --features network
 ```
 
 ## Public Types
@@ -110,6 +110,9 @@ Current public-gateway behavior:
   `/tx/:hash`
 - signed transactions are submitted to `/api/blockchain/submit`
 - fee simulation is derived from the gas schedule returned by `/status`
+- `get_validators()` and `get_delegations()` still require a direct node
+  endpoint today because the public website gateway does not expose those
+  legacy JSON routes
 
 ## `FaucetClient`
 

@@ -122,8 +122,7 @@ Subcommands:
 Notes:
 
 - `status`, `block`, and `epoch` map cleanly to the public node reads
-- `params` currently expects `/v1/chain/params`, which is not publicly routed
-  on `https://dytallix.com`
+- `params` derives the public chain ID and gas schedule from `/status`
 
 ## `crypto`
 
@@ -155,14 +154,13 @@ Subcommands:
 
 - `show`
 - `set <KEY> <VALUE>`
-- `network <testnet|mainnet|local>`
+- `network <testnet|local>`
 - `reset`
 
-Current caveat:
+Current behavior:
 
-- the CLI local profile still points at `http://localhost:8545`
-- the published local node snapshot and published SDK client use
-  `http://localhost:3030`
+- the local profile uses `http://localhost:3030`
+- the public CLI does not expose a selectable `mainnet` endpoint yet
 
 ## `dev`
 
@@ -182,11 +180,10 @@ Subcommands:
 - `simulate-tx <D-ADDR> <AMOUNT>`
 - `benchmark`
 
-Current caveat:
+Current behavior:
 
-- `dev explorer` still opens `https://explorer.dytallix.com`
-- the supported public explorer page currently lives at
-  `https://dytallix.com/build/blockchain`
+- `explorer` opens `https://dytallix.com/build/blockchain`
+- `docs` opens `https://dytallix.com/docs`
 
 ## `stake`
 
@@ -204,6 +201,11 @@ Subcommands:
 The CLI surface is present, but public module exposure may vary depending on the
 gateway routes and node configuration.
 
+Current behavior:
+
+- `status` reads `https://dytallix.com/api/staking/balance/<D-ADDR>`
+- `delegate`, `undelegate`, and `claim` submit signed transactions
+
 ## `governance`
 
 ```bash
@@ -217,8 +219,11 @@ Subcommands:
 - `propose`
 - `status <ID>`
 
-The command surface exists, but several of the read routes it expects are under
-`/v1/*` and are not currently public JSON routes on the website gateway.
+Current behavior:
+
+- `proposals` reads `https://dytallix.com/api/governance/proposals`
+- `status <id>` filters the public proposals list and prints the matching item
+- `vote` and `propose` submit signed transactions
 
 ## `contract`
 
@@ -234,8 +239,13 @@ Subcommands:
 - `info <ADDRESS>`
 - `events <ADDRESS>`
 
-The deploy and call commands build data-bearing transactions; query and metadata
-commands depend on contract routes being exposed on the connected node.
+Current behavior:
+
+- `deploy` and `call` build and submit data-bearing transactions
+- `info <ADDRESS>` reads `https://dytallix.com/api/contracts` and filters the
+  returned list
+- `query` and `events` require a direct node endpoint because the public website
+  gateway does not expose the legacy contract JSON routes
 
 ## `node`
 
@@ -254,3 +264,8 @@ Subcommands:
 This command family is primarily a repo-local developer convenience layer. It
 expects helper scripts such as `start-local.sh` and `stop-local.sh` and is not a
 full production node supervisor.
+
+Current behavior:
+
+- `status` uses the configured local profile on `http://localhost:3030`
+- `peers` reads the local-only `/peers` route directly from the local node

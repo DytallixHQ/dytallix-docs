@@ -120,16 +120,15 @@ That means:
 - the public testnet is presently charging fees in the governance-token denom
 - this overrides older nearby docs that described `DRT` as the fee token
 
-## Local Tooling Caveat
+## Local Tooling Alignment
 
-The CLI local network profile still points to `http://localhost:8545`, while
-the published node and published SDK client use `http://localhost:3030`.
+The current local SDK and CLI defaults now align with the node snapshot:
 
-Until those are aligned:
+- local node port: `3030`
+- local faucet port: `3004`
 
-- use `3030` as the local node port for direct integrations
-- do not assume the CLI `local` profile will hit the published node snapshot
-  without adjustment
+Use `3030` as the canonical local node port for direct integrations and CLI
+workflows.
 
 ## Operational Guidance
 
