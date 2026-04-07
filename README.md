@@ -20,6 +20,7 @@ The content in `docs/` was reconciled against:
 - [Home / Doc Map](docs/index.md) — landing page and navigation entrypoint
 - [Implementation Status](docs/implementation-status.md) — verified public behavior and known mismatches
 - [Getting Started](docs/getting-started.md) — SDK and CLI quickstart
+- [Contract Quickstart](docs/contract-quickstart.md) — canonical public WASM deploy path
 - [Core Concepts](docs/core-concepts.md) — accounts, tokens, gas, and transaction model
 - [CLI Reference](docs/cli-reference.md) — command reference for `dytallix`
 - [SDK Reference](docs/sdk-reference.md) — Rust SDK crate and API reference

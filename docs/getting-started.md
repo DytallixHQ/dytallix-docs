@@ -131,5 +131,6 @@ curl -X POST https://dytallix.com/api/faucet/request \
 
 - [`core-concepts.md`](core-concepts.md)
 - [`cli-reference.md`](cli-reference.md)
+- [`contract-quickstart.md`](contract-quickstart.md)
 - [`sdk-reference.md`](sdk-reference.md)
 - [`rpc-reference.md`](rpc-reference.md)
