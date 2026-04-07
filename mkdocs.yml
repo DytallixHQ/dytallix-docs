@@ -6,6 +6,7 @@ nav:
   - Home: index.md
   - Implementation Status: implementation-status.md
   - Getting Started: getting-started.md
+  - Contract Quickstart: contract-quickstart.md
   - Core Concepts: core-concepts.md
   - CLI Reference: cli-reference.md
   - SDK Reference: sdk-reference.md
