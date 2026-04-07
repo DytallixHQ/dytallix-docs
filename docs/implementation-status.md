@@ -94,7 +94,8 @@ The public SDK and CLI now align on the live public hosts and the `3030` local
 port. The remaining mismatch is narrower:
 
 - validator and delegation reads still require a direct node endpoint
-- contract query and events reads still require a direct node endpoint
+- contract lifecycle reads are implemented on the current node and CLI, but the
+  public website gateway still needs to roll out those routes
 - the public website gateway remains centered on root RPC reads and selected
   `/api/*` surfaces
 

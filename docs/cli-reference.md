@@ -241,11 +241,13 @@ Subcommands:
 
 Current behavior:
 
-- `deploy` and `call` build and submit data-bearing transactions
-- `info <ADDRESS>` reads `https://dytallix.com/api/contracts` and filters the
-  returned list
-- `query` and `events` require a direct node endpoint because the public website
-  gateway does not expose the legacy contract JSON routes
+- `deploy` posts WASM bytes to `https://dytallix.com/contracts/deploy`
+- `call` posts method execution requests to `https://dytallix.com/contracts/call`
+- `info <ADDRESS>` reads `/api/contracts/<address>`
+- `query` reads `/api/contracts/<address>/query/<method>`
+- `events` reads `/api/contracts/<address>/events`
+- for a direct node endpoint or a local node, set `DYTALLIX_ENDPOINT` or run
+  `dytallix config set endpoint http://localhost:3030`
 
 ## `node`
 
