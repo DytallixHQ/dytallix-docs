@@ -1,12 +1,12 @@
 # Contract Quickstart
 
-This is the canonical public path from zero to a first contract deployment on
-Dytallix.
+This is the canonical path from zero to a first contract build on Dytallix,
+followed by deployment against a direct node endpoint.
 
 It uses:
 
 - the public `dytallix` CLI
-- the live testnet faucet and submit path
+- the live testnet faucet and transfer path
 - the minimal deployable WASM example published in `dytallix-sdk`
 
 ## What You Need
@@ -66,7 +66,23 @@ The resulting artifact is:
 examples/contracts/minimal_contract/target/wasm32-unknown-unknown/release/minimal_contract.wasm
 ```
 
-## 5. Deploy It
+## 5. Point The CLI At A Direct Node
+
+The public website gateway at `https://dytallix.com` currently returns `405
+Method Not Allowed` for `POST /contracts/deploy` and `POST /contracts/call`.
+Use a direct node endpoint or a local node for contract writes:
+
+```bash
+dytallix config set endpoint http://localhost:3030
+```
+
+Or for a one-off shell session:
+
+```bash
+export DYTALLIX_ENDPOINT=http://localhost:3030
+```
+
+## 6. Deploy It Against That Node
 
 ```bash
 dytallix contract deploy \
@@ -79,7 +95,7 @@ Expected result:
 - a predicted contract address
 - a success message indicating the deployment transaction was submitted
 
-## 6. Inspect The Contract Lifecycle
+## 7. Inspect The Contract Lifecycle
 
 Useful follow-up commands:
 
@@ -90,21 +106,8 @@ dytallix contract call <CONTRACT_ADDRESS> ping
 dytallix contract events <CONTRACT_ADDRESS>
 ```
 
-If you want the full lifecycle against a current node build or a direct node
-endpoint, point the CLI at that base URL first:
-
-```bash
-dytallix config set endpoint http://localhost:3030
-```
-
-Or for a one-off shell session:
-
-```bash
-export DYTALLIX_ENDPOINT=http://localhost:3030
-```
-
-That override applies to `contract info`, `query`, `call`, and `events` without
-changing your faucet profile.
+That override applies to `contract deploy`, `info`, `query`, `call`, and
+`events` without changing your faucet profile.
 
 Useful public pages:
 
@@ -113,15 +116,17 @@ Useful public pages:
 
 ## Public Rollout Status
 
-The current node and CLI support contract lifecycle reads at:
+The current node and CLI support contract routes at:
 
+- `POST /contracts/deploy`
+- `POST /contracts/call`
 - `GET /api/contracts/<address>`
 - `GET /api/contracts/<address>/query/<method>`
 - `GET /api/contracts/<address>/events`
 
-The public website gateway still needs to roll out those reads. Until that
-happens, use a direct node endpoint or a local node for the full post-deploy
-loop.
+The public website gateway still needs to roll out those write routes, and it
+may also lag some of the read routes. Until that happens, use a direct node
+endpoint or a local node for the full contract loop.
 
 ## Related Repositories
 

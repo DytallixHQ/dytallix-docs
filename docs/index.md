@@ -36,7 +36,7 @@ Public surfaces verified on that date:
 - [`getting-started.md`](getting-started.md) if you want a funded wallet and
   your first transaction
 - [`contract-quickstart.md`](contract-quickstart.md) if you want the canonical
-  public WASM deployment path
+  contract build path and the direct-node deploy flow
 - [`core-concepts.md`](core-concepts.md) if you want the mental model first
 - [`cli-reference.md`](cli-reference.md) if you are using `dytallix`
 - [`sdk-reference.md`](sdk-reference.md) if you are integrating from Rust

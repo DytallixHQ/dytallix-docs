@@ -241,11 +241,14 @@ Subcommands:
 
 Current behavior:
 
-- `deploy` posts WASM bytes to `https://dytallix.com/contracts/deploy`
-- `call` posts method execution requests to `https://dytallix.com/contracts/call`
+- `deploy` posts WASM bytes to `/contracts/deploy` on the active endpoint
+- `call` posts method execution requests to `/contracts/call` on the active endpoint
 - `info <ADDRESS>` reads `/api/contracts/<address>`
 - `query` reads `/api/contracts/<address>/query/<method>`
 - `events` reads `/api/contracts/<address>/events`
+- the default public website gateway does not currently accept contract write
+  requests and returns `405 Method Not Allowed`; for `deploy` and `call`, point
+  the CLI at a direct node endpoint or a local node
 - for a direct node endpoint or a local node, set `DYTALLIX_ENDPOINT` or run
   `dytallix config set endpoint http://localhost:3030`
 
