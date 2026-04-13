@@ -2,9 +2,13 @@
 
 Official documentation for Dytallix, a PQC-native Layer 1 blockchain.
 
+Keypair, faucet, transfer, and basic contract lifecycle are available for experimentation on the public testnet. Staking, governance, and some advanced or operator paths are not yet production-complete.
+
 This repository now contains the first complete public docs set for the Dytallix
 SDK, CLI, public RPC, explorer endpoints, node snapshot, token model, security
 assumptions, FAQ, and whitepaper distribution.
+
+This repository is the canonical public documentation source. It is not the live website frontend source for `dytallix.com`, and it does not publish the hosted explorer frontend or faucet backend.
 
 The content in `docs/` was reconciled against:
 
@@ -18,6 +22,7 @@ The content in `docs/` was reconciled against:
 ## Repository Layout
 
 - [Home / Doc Map](docs/index.md) — landing page and navigation entrypoint
+- [Publication Status](docs/publication-status.md) — repo roles, source availability, and current publication boundaries
 - [Implementation Status](docs/implementation-status.md) — verified public behavior and known mismatches
 - [Getting Started](docs/getting-started.md) — SDK and CLI quickstart
 - [Contract Quickstart](docs/contract-quickstart.md) — canonical public WASM deploy path
@@ -60,3 +65,5 @@ docs before those inconsistencies land on `main`.
 - Faucet: https://github.com/DytallixHQ/dytallix-faucet
 - Docs site: https://dytallix.com/docs
 - Discord: https://discord.gg/eyVvu5kmPG
+
+The explorer and faucet repositories are docs-only service-surface repos today. The live website frontend source is not yet represented by a dedicated public repository in the DytallixHQ org.

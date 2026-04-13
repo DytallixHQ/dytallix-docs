@@ -4,6 +4,7 @@ theme:
   name: readthedocs
 nav:
   - Home: index.md
+  - Publication Status: publication-status.md
   - Implementation Status: implementation-status.md
   - Getting Started: getting-started.md
   - Contract Quickstart: contract-quickstart.md

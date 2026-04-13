@@ -9,7 +9,7 @@ CLI.
 ## Is there a live public testnet?
 
 Yes. Public read endpoints, the faucet, and signed transaction submission were
-all verified against `https://dytallix.com` on April 6, 2026.
+all verified against `https://dytallix.com` on April 13, 2026.
 
 ## How do I get testnet funds?
 
@@ -47,6 +47,9 @@ Use the site-hosted explorer:
 https://dytallix.com/build/blockchain
 ```
 
+The public `dytallix-explorer` repository currently documents that hosted
+surface. It does not publish the deployed explorer frontend source.
+
 ## Can I call the public node directly?
 
 Yes. The most useful public routes today are:
@@ -70,6 +73,15 @@ surfaces are still ahead of the public gateway routing.
 The published local node snapshot uses `3030`. The CLI local-profile constant is
 still catching up in one place, so direct local integrations should treat `3030`
 as the observable node port.
+
+## Is the website frontend source public?
+
+Not yet as a dedicated public repo. The current public docs repo publishes the
+documentation content, but it is not the live website frontend source for
+`dytallix.com`.
+
+The public faucet and explorer repos are also docs-only service-surface repos,
+not the hosted backend or frontend implementations.
 
 ## Where are the whitepapers?
 

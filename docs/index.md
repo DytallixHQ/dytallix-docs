@@ -4,6 +4,8 @@ Dytallix is a post-quantum-native Layer 1 blockchain built around ML-DSA-65
 accounts, canonical Bech32m addresses, a two-token economic model, and a public
 testnet with SDK, CLI, faucet, node, and explorer surfaces.
 
+Keypair, faucet, transfer, and basic contract lifecycle are available for experimentation on the public testnet. Staking, governance, and some advanced or operator paths are not yet production-complete.
+
 This docs set is intended to do two things at once:
 
 1. explain the protocol and developer interfaces clearly
@@ -14,13 +16,16 @@ slightly different endpoint paths, fee-token descriptions, and local-node
 defaults. Those differences are captured in
 [`implementation-status.md`](implementation-status.md).
 
+It is not the live website frontend source for `dytallix.com`.
+
 ## Public Snapshot
 
 The content in this repository was checked against the live Dytallix public
-gateway on April 6, 2026.
+gateway on April 13, 2026.
 
 Public surfaces verified on that date:
 
+- `GET https://dytallix.com/api/capabilities`
 - `GET https://dytallix.com/status`
 - `GET https://dytallix.com/account/:address`
 - `GET https://dytallix.com/balance/:address`
@@ -44,6 +49,8 @@ Public surfaces verified on that date:
 
 ## Documentation Map
 
+- [`publication-status.md`](publication-status.md) records repo roles, docs-only
+  surfaces, and current public source boundaries
 - [`implementation-status.md`](implementation-status.md) records what was
   verified and where the current code and docs disagree
 - [`node-operators.md`](node-operators.md) covers the published node snapshot,

@@ -1,6 +1,6 @@
 # Implementation Status
 
-This page records the public behavior that was verified on April 6, 2026 and
+This page records the public behavior that was verified on April 13, 2026 and
 the practical limitations that still matter for public integrations.
 
 ## Treat These As Canonical Today
@@ -13,6 +13,8 @@ treated as canonical:
 - faucet endpoints under `https://dytallix.com/api/faucet`
 - signed transaction submission through
   `POST https://dytallix.com/api/blockchain/submit`
+- machine-readable capability discovery through
+  `GET https://dytallix.com/api/capabilities`
 - ML-DSA-65 addresses and signatures for public Dytallix accounts
 
 ## Verified Public Behavior
@@ -22,6 +24,7 @@ The following were checked directly against the live gateway.
 ### Root RPC
 
 - `GET /status` returns chain health, height, gas schedule, and timestamp
+- `GET /api/capabilities` returns the canonical public capability contract
 - `GET /account/:address` returns address, raw balances, and nonce
 - `GET /balance/:address` returns formatted per-denom balances
 - `GET /block/:id` returns block details
@@ -40,12 +43,12 @@ route is active and validating request shape.
 - `GET /api/faucet/check/:address`
 - `POST /api/faucet/request`
 
-The faucet reported these limits on April 6, 2026:
+The faucet reported these limits on April 13, 2026:
 
 - `10 DGT` per request
 - `100 DRT` per request
-- `60` minute cooldown
-- `3` requests per hour
+- `60` second cooldown
+- `20` requests per hour
 
 ### End-To-End SDK Check
 
@@ -99,6 +102,15 @@ port. The remaining mismatch is narrower:
   routes and can still lag the read routes
 - the public website gateway remains centered on root RPC reads and selected
   `/api/*` surfaces
+
+### Explorer And Faucet Repositories Are Docs-Only
+
+The public `dytallix-explorer` and `dytallix-faucet` repositories currently
+document hosted service surfaces. They should not be treated as deployable
+frontend or backend source trees.
+
+The live website frontend source is also not yet represented by a dedicated
+public repository.
 
 ### Block Interval Default
 

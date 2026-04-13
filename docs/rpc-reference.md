@@ -7,6 +7,9 @@ There are two main surfaces:
 - root RPC under `https://dytallix.com`
 - explorer read APIs under `https://dytallix.com/api/blockchain`
 
+Compatible nodes also expose a machine-readable public contract at
+`https://dytallix.com/api/capabilities`.
+
 ## Canonical Root RPC
 
 These routes are the most relevant for SDK and direct integration work.
@@ -33,11 +36,31 @@ Key fields:
 - `gas.min_gas_price`
 - `gas.default_gas_limit`
 
-Observed notes on April 6, 2026:
+Observed notes on April 13, 2026:
 
 - `chain_id` was `dyt-local-1`
 - `fee_denom` was `udgt`
 - `min_gas_price` was `1000`
+
+### `GET /api/capabilities`
+
+Returns the machine-readable public capability contract for compatible node
+deployments.
+
+Example:
+
+```bash
+curl https://dytallix.com/api/capabilities
+```
+
+Key fields:
+
+- `canonicalStatement`
+- `publicNode.contractEndpoint.path`
+- `publicNode.disabledPublicWrites`
+- `publicNode.directNodeOnlyRoutes`
+- `features.stakingWrites`
+- `features.governanceWrites`
 
 ### `GET /account/:address`
 
@@ -236,7 +259,10 @@ The current response includes:
 - `active_validators`
 - `total_validators`
 - `reward_index`
-- validator list with `moniker`, `commission`, `uptime`, and `pqc_enabled`
+- validator list with D-Addr-compatible `address`, `moniker`, `status`, `source`, and `pqc_enabled`
+
+The live public response now reports a single current proposer entry rather than
+the older placeholder four-validator shape.
 
 ## Faucet API
 

@@ -1,7 +1,10 @@
 # Node Operators
 
-This page summarizes the published Dytallix node snapshot and the practical
-defaults that matter when running it locally.
+This page summarizes the published Dytallix node snapshot, the reproducible
+deployment path published with it, and the practical defaults that matter when
+running it locally.
+
+Keypair, faucet, transfer, and basic contract lifecycle are available for experimentation on the public testnet. Staking, governance, and some advanced or operator paths are not yet production-complete.
 
 ## Published Node Snapshot
 
@@ -24,6 +27,9 @@ Primary components:
 cd dytallix-fast-launch/node
 cargo build --release --locked
 ```
+
+For the clean checkout deployment templates and install flow, also see
+`docs/build-and-run.md` in the node repo.
 
 ## Runtime Defaults Observed In Source
 
@@ -125,10 +131,20 @@ That means:
 The current local SDK and CLI defaults now align with the node snapshot:
 
 - local node port: `3030`
-- local faucet port: `3004`
 
 Use `3030` as the canonical local node port for direct integrations and CLI
 workflows.
+
+## Public Deployment Provenance
+
+The current public node behavior can be checked from public endpoints such as
+`/status` and `/api/capabilities`, and the repo now includes clean `systemd`
+and `pm2` deployment templates.
+
+That is enough to publish a reproducible deployment path from source, but not
+enough on its own to prove that the live production host has already been cut
+over to a clean checkout. Independent operator-side evidence is still required
+before the node should be described as a fully proven canonical deployment repo.
 
 ## Operational Guidance
 
