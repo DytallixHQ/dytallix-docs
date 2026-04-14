@@ -48,8 +48,8 @@ https://dytallix.com/build/blockchain
 ```
 
 The public `dytallix-explorer` repository documents that hosted surface. The
-canonical deployed explorer frontend source now lives in the public
-`dytallix-website` repository.
+deployed explorer frontend source is not currently published in a separate
+public repo.
 
 ## Can I call the public node directly?
 
@@ -77,12 +77,13 @@ as the observable node port.
 
 ## Is the website frontend source public?
 
-Yes. The live website frontend source is now public in the `dytallix-website`
-repository.
+No. The live website frontend is the hosted public surface itself, but the
+frontend source is not currently published in a separate public repo.
 
 The live faucet backend source is also public in `dytallix-faucet`. The
 `dytallix-explorer` repository remains a docs-only service-surface repo, while
-the explorer UI source itself lives in `dytallix-website`.
+the explorer UI source itself is not currently published as a separate public
+repo.
 
 ## Where are the whitepapers?
 

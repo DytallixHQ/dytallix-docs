@@ -31,11 +31,11 @@
       "scripts/check_public_surface.py",
       "It is not the live website frontend source for `dytallix.com`",
       "The explorer repository remains a docs-only service-surface repo",
-      "the live website frontend source is now public in `dytallix-website`",
+      "The live website frontend for `dytallix.com` is a hosted public surface, not a separate public source repo",
       "the live faucet backend source is now public in `dytallix-faucet`"
     ],
     "docs/publication-status.md": [
-      "canonical frontend source now lives in `dytallix-website`",
+      "The live website frontend remains a hosted public surface rather than a separate public source repo",
       "live faucet backend source is now published in the public `dytallix-faucet` repo",
       "clean public checkout rooted at `/opt/dytallix-node`"
     ],
@@ -61,7 +61,7 @@
       "GET https://dytallix.com/api/capabilities",
       "60` second cooldown",
       "20` requests per hour",
-      "canonical deployed explorer frontend source is now public in",
+      "The hosted explorer frontend source is not currently published as a separate public repo",
       "compatibility config is published in that repo"
     ]
   }

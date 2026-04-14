@@ -66,4 +66,4 @@ docs before those inconsistencies land on `main`.
 - Docs site: https://dytallix.com/docs
 - Discord: https://discord.gg/eyVvu5kmPG
 
-The explorer repository remains a docs-only service-surface repo. the live website frontend source is now public in `dytallix-website`, and the live faucet backend source is now public in `dytallix-faucet`.
+The explorer repository remains a docs-only service-surface repo. The live website frontend for `dytallix.com` is a hosted public surface, not a separate public source repo, and the live faucet backend source is now public in `dytallix-faucet`.

@@ -105,9 +105,7 @@ port. The remaining mismatch is narrower:
 
 ### Explorer Source Boundary And Faucet Edge Compatibility
 
-The public `dytallix-explorer` repository remains a docs-only surface map. The
-canonical deployed explorer frontend source is now public in
-`dytallix-website` under `src/pages/build/blockchain.tsx`.
+The public `dytallix-explorer` repository remains a docs-only surface map. The hosted explorer frontend source is not currently published as a separate public repo.
 
 The public `dytallix-faucet` repository now contains the live backend source,
 but the public `GET /api/faucet/status` and `GET /api/faucet/check/:address`
