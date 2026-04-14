@@ -103,14 +103,16 @@ port. The remaining mismatch is narrower:
 - the public website gateway remains centered on root RPC reads and selected
   `/api/*` surfaces
 
-### Explorer And Faucet Repositories Are Docs-Only
+### Explorer Source Boundary And Faucet Edge Compatibility
 
-The public `dytallix-explorer` and `dytallix-faucet` repositories currently
-document hosted service surfaces. They should not be treated as deployable
-frontend or backend source trees.
+The public `dytallix-explorer` repository remains a docs-only surface map. The
+canonical deployed explorer frontend source is now public in
+`dytallix-website` under `src/pages/build/blockchain.tsx`.
 
-The live website frontend source is also not yet represented by a dedicated
-public repository.
+The public `dytallix-faucet` repository now contains the live backend source,
+but the public `GET /api/faucet/status` and `GET /api/faucet/check/:address`
+responses are still served by the nginx edge rather than the backend process
+itself. The matching compatibility config is published in that repo.
 
 ### Block Interval Default
 
@@ -127,4 +129,4 @@ For future doc maintenance, use this priority order:
 2. live public gateway behavior
 3. `dytallix-sdk`
 4. `dytallix-node`
-5. docs-only public service repositories such as explorer and faucet
+5. supporting public service repositories such as explorer docs and faucet deployment compatibility config

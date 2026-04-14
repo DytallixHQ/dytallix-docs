@@ -8,7 +8,7 @@ This repository now contains the first complete public docs set for the Dytallix
 SDK, CLI, public RPC, explorer endpoints, node snapshot, token model, security
 assumptions, FAQ, and whitepaper distribution.
 
-This repository is the canonical public documentation source. It is not the live website frontend source for `dytallix.com`, and it does not publish the hosted explorer frontend or faucet backend.
+This repository is the canonical public documentation source. It is not the live website frontend source for `dytallix.com`.
 
 The content in `docs/` was reconciled against:
 
@@ -66,4 +66,4 @@ docs before those inconsistencies land on `main`.
 - Docs site: https://dytallix.com/docs
 - Discord: https://discord.gg/eyVvu5kmPG
 
-The explorer and faucet repositories are docs-only service-surface repos today. The live website frontend source is not yet represented by a dedicated public repository in the DytallixHQ org.
+The explorer repository remains a docs-only service-surface repo. the live website frontend source is now public in `dytallix-website`, and the live faucet backend source is now public in `dytallix-faucet`.

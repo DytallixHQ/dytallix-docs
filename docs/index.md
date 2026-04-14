@@ -49,8 +49,8 @@ Public surfaces verified on that date:
 
 ## Documentation Map
 
-- [`publication-status.md`](publication-status.md) records repo roles, docs-only
-  surfaces, and current public source boundaries
+- [`publication-status.md`](publication-status.md) records repo roles,
+  current source boundaries, and which repos are canonical for each live surface
 - [`implementation-status.md`](implementation-status.md) records what was
   verified and where the current code and docs disagree
 - [`node-operators.md`](node-operators.md) covers the published node snapshot,
