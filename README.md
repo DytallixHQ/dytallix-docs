@@ -71,5 +71,8 @@ The explorer repository remains a docs-only service-surface repo. The live websi
 ## Contributing
 
 Docs changes should preserve the current public boundaries. If a command,
-endpoint, or publication-status statement changes, update the relevant Markdown
-page and run `python3 scripts/check_public_surface.py` before opening a PR.
+endpoint, publication-status statement, or other guard-checked public wording
+changes, update the relevant Markdown page and run
+`python3 scripts/check_public_surface.py` before opening a PR. If the change
+updates public behavior wording or required strings enforced by the
+guard/config, update `public-surface.json` in the same PR.
