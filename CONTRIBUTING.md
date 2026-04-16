@@ -1,4 +1,4 @@
-# Contributing To dytallix-docs
+# Contributing to dytallix-docs
 
 This repository is the canonical public documentation source for Dytallix.
 
