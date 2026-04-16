@@ -67,3 +67,9 @@ docs before those inconsistencies land on `main`.
 - Discord: https://discord.gg/eyVvu5kmPG
 
 The explorer repository remains a docs-only service-surface repo. The live website frontend for `dytallix.com` is a hosted public surface, not a separate public source repo, and the live faucet backend source is now public in `dytallix-faucet`.
+
+## Contributing
+
+Docs changes should preserve the current public boundaries. If a command,
+endpoint, or publication-status statement changes, update the relevant Markdown
+page and run `python3 scripts/check_public_surface.py` before opening a PR.
