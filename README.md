@@ -19,6 +19,11 @@ The content in `docs/` was reconciled against:
 - live public endpoint checks performed on April 6, 2026
 - [`public-surface.json`](public-surface.json), which is checked in CI
 
+## Prerequisites
+
+Use Python 3 to run the public-surface guard scripts in this repository.
+Install MkDocs only if you want to preview the documentation site locally.
+
 ## Repository Layout
 
 - [Home / Doc Map](docs/index.md) — landing page and navigation entrypoint

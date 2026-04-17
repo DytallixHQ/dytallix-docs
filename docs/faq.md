@@ -65,9 +65,10 @@ Yes. The most useful public routes today are:
 
 ## Are all CLI commands fully live on the public gateway?
 
-Not yet. Wallet, balance, faucet, and core transfer flows are the most
-straightforward today. Some governance, contract, and `/v1/*`-backed read
-surfaces are still ahead of the public gateway routing.
+Not yet. Wallet, balance, faucet, core transfer flows, and the basic contract
+deploy/call/query/info/events loop are straightforward today. Governance
+writes, staking writes, and some `/v1/*`-backed read surfaces are still ahead
+of the public gateway routing.
 
 ## What port does the local node use?
 
