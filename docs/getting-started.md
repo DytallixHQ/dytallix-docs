@@ -86,11 +86,20 @@ dytallix faucet status
 Send a test transfer:
 
 ```bash
-dytallix send --token drt <D-ADDR> 1
+dytallix wallet create --name recipient
+dytallix wallet switch recipient
+dytallix wallet info
+dytallix wallet switch default
+dytallix send <recipient-daddr> 100
+dytallix wallet switch recipient
+dytallix balance
 ```
 
+Use a different recipient address than the one created by `dytallix init`.
 The current public testnet charges gas in `DGT`, so even a `DRT` transfer needs
-some `DGT` in the sending wallet.
+some `DGT` in the sending wallet. The `send` command waits for the public
+transaction receipt route to leave `Pending` when that route is already
+indexing.
 
 ## Faucet
 
@@ -100,12 +109,12 @@ Canonical faucet base:
 https://dytallix.com/api/faucet
 ```
 
-Current reported limits on April 6, 2026:
+Current reported limits on April 17, 2026:
 
 - `10 DGT`
 - `100 DRT`
-- `60` minute cooldown
-- `3` requests per hour
+- `60` second cooldown
+- `20` requests per hour
 
 Example request:
 
@@ -113,9 +122,7 @@ Example request:
 curl -X POST https://dytallix.com/api/faucet/request \
   -H 'content-type: application/json' \
   -d '{
-    "address": "<D-ADDR>",
-    "dgt_amount": 10,
-    "drt_amount": 100
+    "address": "<D-ADDR>"
   }'
 ```
 

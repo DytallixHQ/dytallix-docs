@@ -1,7 +1,7 @@
 # Contract Quickstart
 
 This is the canonical path from zero to a first contract build on Dytallix,
-followed by deployment against a direct node endpoint.
+followed by deployment against the public testnet gateway.
 
 It uses:
 
@@ -66,11 +66,14 @@ The resulting artifact is:
 examples/contracts/minimal_contract/target/wasm32-unknown-unknown/release/minimal_contract.wasm
 ```
 
-## 5. Point The CLI At A Direct Node
+## 5. Optional: Point The CLI At Another Node
 
-The public website gateway at `https://dytallix.com` currently returns `405
-Method Not Allowed` for `POST /contracts/deploy` and `POST /contracts/call`.
-Use a direct node endpoint or a local node for contract writes:
+The default testnet profile already targets `https://dytallix.com`, and the
+public gateway now accepts `POST /contracts/deploy` and
+`POST /contracts/call`.
+
+If you want to test against a direct node endpoint or a local node instead,
+override the endpoint:
 
 ```bash
 dytallix config set endpoint http://localhost:3030
@@ -82,7 +85,7 @@ Or for a one-off shell session:
 export DYTALLIX_ENDPOINT=http://localhost:3030
 ```
 
-## 6. Deploy It Against That Node
+## 6. Deploy It
 
 ```bash
 dytallix contract deploy \
@@ -106,8 +109,8 @@ dytallix contract call <CONTRACT_ADDRESS> ping
 dytallix contract events <CONTRACT_ADDRESS>
 ```
 
-That override applies to `contract deploy`, `info`, `query`, `call`, and
-`events` without changing your faucet profile.
+If you set an endpoint override, it applies to `contract deploy`, `info`,
+`query`, `call`, and `events` without changing your faucet profile.
 
 Useful public pages:
 
@@ -124,9 +127,9 @@ The current node and CLI support contract routes at:
 - `GET /api/contracts/<address>/query/<method>`
 - `GET /api/contracts/<address>/events`
 
-The public website gateway still needs to roll out those write routes, and it
-may also lag some of the read routes. Until that happens, use a direct node
-endpoint or a local node for the full contract loop.
+These routes were verified live through `https://dytallix.com` on April 16,
+2026. A direct node endpoint or local node is still useful for debugging,
+local testing, or custom infrastructure.
 
 ## Related Repositories
 
